@@ -1,0 +1,26 @@
+{
+  "name": "coral-mongo-cruds",
+  "version": "1.0.0",
+  "description": "Exposes a few Tasks (from folktale/data.task) that allow for straightforward  and composable creation of CRUD operations, (although no read function is directly exposed)",
+  "main": "mongo-tasks.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --colors --reporter spec ./**/*spec.js"
+  },
+  "author": "Diego Villaseñor",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coral-mongo-tasks": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.1",
+    "gulp-watch": "^4.3.11",
+    "mocha": "^3.2.0",
+    "proxyquire": "^1.7.10"
+  },
+  "dependencies": {
+    "coral-mongo-attachments": "^1.0.0",
+    "data.task": "^3.1.1",
+    "mongodb": "^2.2.29",
+    "ramda": "^0.23.0"
+  }
+}
