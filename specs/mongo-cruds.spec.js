@@ -95,7 +95,7 @@ describe('Models Library Tasks: High level functions for very easy to do CRUDS',
 			});
 		});
 
-		describe('simpleUpdate :: {Task find, Task insertOne} -> ["field"] -> Validator ( {validation} ->  Req {body} -> Task {body}) -> Req {body, ...} -> Task dbInsertion && dbFind', ()  => {
+		describe('simpleUpdate :: {Task find, Task updateOne} -> ["field"] -> Validator ( {validation} ->  Req {body} -> Task {body}) -> Req {body, {params: _id} ...} -> Task dbUpdate && dbFind', ()  => {
 			let query_results
 			before(done => {
 				let find = findIn(db, 'simpleUpdate')
@@ -124,7 +124,7 @@ describe('Models Library Tasks: High level functions for very easy to do CRUDS',
 			});
 		});
 
-		describe('updateWithAttachments :: {Task find, Task insertOne} -> ["field"] -> Validator ( {validation} ->  Req {body} -> Task {body}) -> Req {body, ...} -> Task dbInsertion && dbFind', ()  => {
+		describe('updateWithAttachments :: {Task find, Task updateOne} -> ["field"] -> Validator ( {validation} ->  Req {body} -> Task {body}) -> Req {body, {params: _id}...} -> Task dbUpdate && dbFind', ()  => {
 			let query_results
 			before(done => {
 				let find = findIn(db, 'updateWithAttachments')
@@ -203,7 +203,7 @@ describe('Models Library Tasks: High level functions for very easy to do CRUDS',
 			});
 		});
 
-		describe('simpleDelete :: {Task find, Task insertOne} -> ["field"] -> Validator ( {validation} ->  Req {body} -> Task {body}) -> Req {body, ...} -> Task dbInsertion && dbFind', ()  => {
+		describe('simpleDelete :: {deleteInOne} -> Req { params {_id} } -> Task dbDelete', ()  => {
 			let query_results
 			before(done => {
 				let find = findIn(db, 'simpleDelete')
@@ -231,7 +231,5 @@ describe('Models Library Tasks: High level functions for very easy to do CRUDS',
 				)
 			});
 		});
-
-
 	});
 });
